@@ -31,7 +31,7 @@ function getRandomPet(pets) {
 
 describe('Action creators', () => {
   describe('previewPet', () => {
-    xit('returns properly formatted action', () => {
+    it('returns properly formatted action', () => {
       const pet = getRandomPet(DOGS);
 
       expect(previewPet(pet)).to.be.deep.equal({
@@ -42,7 +42,7 @@ describe('Action creators', () => {
   });
 
   describe('adoptPet', () => {
-    xit('returns properly formatted action', () => {
+    it('returns properly formatted action', () => {
       const pet = getRandomPet(DOGS);
 
       expect(adoptPet(pet)).to.be.deep.equal({
@@ -53,7 +53,7 @@ describe('Action creators', () => {
   });
 
   describe('addNewDog', () => {
-    xit('returns properly formatted action', () => {
+    it('returns properly formatted action', () => {
       const pet = getRandomPet(DOGS);
 
       expect(addNewDog(pet)).to.be.deep.equal({
@@ -64,7 +64,7 @@ describe('Action creators', () => {
   });
 
   describe('addNewCat', () => {
-    xit('returns properly formatted action', () => {
+    it('returns properly formatted action', () => {
       const pet = getRandomPet(CATS);
 
       expect(addNewCat(pet)).to.be.deep.equal({
@@ -75,7 +75,7 @@ describe('Action creators', () => {
   });
 
   describe('removeDog', () => {
-    xit('returns properly formatted action', () => {
+    it('returns properly formatted action', () => {
       const pet = getRandomPet(DOGS);
 
       expect(removeDog(pet)).to.be.deep.equal({
@@ -86,7 +86,7 @@ describe('Action creators', () => {
   });
 
   describe('removeCat', () => {
-    xit('returns properly formatted action', () => {
+    it('returns properly formatted action', () => {
       const pet = getRandomPet(CATS);
 
       expect(removeCat(pet)).to.be.deep.equal({
@@ -98,7 +98,7 @@ describe('Action creators', () => {
 }); // end Action creators
 
 describe('Reducer', () => {
-  xit('returns the initial state by default', () => {
+  it('returns the initial state by default', () => {
     // creates a store (for testing) using your (real) reducer
     const store = createStore(reducer, applyMiddleware(enforceImmutableState()));
 
@@ -109,7 +109,7 @@ describe('Reducer', () => {
   });
 
   describe('reduces on PREVIEW_PET action', () => {
-    xit("sets the action's pet as the petToPreview on state (without mutating the previous state)", () => {
+    it("sets the action's pet as the petToPreview on state (without mutating the previous state)", () => {
       const store = createStore(reducer, applyMiddleware(enforceImmutableState()));
       const prevState = store.getState();
 
@@ -131,7 +131,7 @@ describe('Reducer', () => {
   });
 
   describe('reduces on ADOPT_PET action', () => {
-    xit("sets the action's pet as the petToAdopt on state (without mutating the previous state)", () => {
+    it("sets the action's pet as the petToAdopt on state (without mutating the previous state)", () => {
       const store = createStore(reducer, applyMiddleware(enforceImmutableState()));
       const prevState = store.getState();
 
@@ -150,7 +150,7 @@ describe('Reducer', () => {
   });
 
   describe('reduces on ADD_NEW_DOG action', () => {
-    xit('adds the new dog to the end of the dogs array (without mutating the previous state)', () => {
+    it('adds the new dog to the end of the dogs array (without mutating the previous state)', () => {
       const store = createStore(reducer, applyMiddleware(enforceImmutableState()));
       const initialState = store.getState();
 
@@ -180,7 +180,7 @@ describe('Reducer', () => {
   });
 
   describe('reduces on ADD_NEW_CAT action', () => {
-    xit('adds the new cat to the end of the cats array (without mutating the previous state)', () => {
+    it('adds the new cat to the end of the cats array (without mutating the previous state)', () => {
       const store = createStore(reducer, applyMiddleware(enforceImmutableState()));
       const initialState = store.getState();
 
@@ -210,7 +210,7 @@ describe('Reducer', () => {
   });
 
   describe('reduces on REMOVE_DOG action', () => {
-    xit('removes a dog from the dogs array (without mutating the previous state)', () => {
+    it('removes a dog from the dogs array (without mutating the previous state)', () => {
       // adds need some pre-loaded state in the store
       // the state.dogs array is initialized as our DOGS array
       const store = createStore(
@@ -241,7 +241,7 @@ describe('Reducer', () => {
   });
 
   describe('reduces on REMOVE_CAT action', () => {
-    xit('removes a cat from the cats array (without mutating the previous state)', () => {
+    it('removes a cat from the cats array (without mutating the previous state)', () => {
       // adds need some pre-loaded state in the store
       // the state.cats array is initialized as our CATS array
       const store = createStore(
@@ -272,7 +272,7 @@ describe('Reducer', () => {
   });
 
   describe('handles unrecognized actions', () => {
-    xit('returns the previous state', () => {
+    it('returns the previous state', () => {
       const store = createStore(reducer, applyMiddleware(enforceImmutableState()));
       const prevState = store.getState();
 

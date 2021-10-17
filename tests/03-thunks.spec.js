@@ -61,7 +61,7 @@ describe("Thunks", () => {
         .reply(200, ["red balloon", "yellow balloon", "green balloon"]);
     });
 
-    xit("sets the received balloons on state", async () => {
+    it("sets the received balloons on state", async () => {
       await store.dispatch(createGetBalloonsThunk());
       const state = store.getState();
       expect(state.balloons).to.deep.equal([
@@ -77,7 +77,7 @@ describe("Thunks", () => {
       mockAxios.onGet("/balloons").reply(404, "No balloons today!");
     });
 
-    xit("sets the thrown error on state", async () => {
+    it("sets the thrown error on state", async () => {
       await store.dispatch(createGetBalloonsThunk());
       const state = store.getState();
       expect(state.balloonsError.response.data).to.deep.equal(

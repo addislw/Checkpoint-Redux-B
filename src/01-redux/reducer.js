@@ -1,10 +1,4 @@
 import {
-  previewPet,
-  adoptPet,
-  addNewDog,
-  addNewCat,
-  removeDog,
-  removeCat,
   PREVIEW_PET,
   ADOPT_PET,
   ADD_NEW_DOG,

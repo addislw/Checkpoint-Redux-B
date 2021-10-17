@@ -47,7 +47,7 @@ beforeEach(() => {
 });
 
 describe("Combine Reducers", () => {
-  xit("increments age when a person has a birthday", () => {
+  it("increments age when a person has a birthday", () => {
     store.dispatch(createHadABirthdayAction());
     store.dispatch(createHadABirthdayAction());
     store.dispatch(createHadABirthdayAction());
@@ -55,21 +55,21 @@ describe("Combine Reducers", () => {
     expect(store.getState().age).to.equal(3);
   });
 
-  xit("adds to cash when a person receives a paycheck", () => {
+  it("adds to cash when a person receives a paycheck", () => {
     store.dispatch(createReceivedAPaycheckAction(2300));
     store.dispatch(createReceivedAPaycheckAction(2300));
 
     expect(store.getState().cash).to.equal(4600);
   });
 
-  xit("subtracts from cash when a person buys an item", () => {
+  it("subtracts from cash when a person buys an item", () => {
     store.dispatch(createReceivedAPaycheckAction(1000));
     store.dispatch(createBoughtAnItemAction("A Cheap Boat", 500));
 
     expect(store.getState().cash).to.equal(500);
   });
 
-  xit("lists new purchases after a person buys an item", () => {
+  it("lists new purchases after a person buys an item", () => {
     store.dispatch(createReceivedAPaycheckAction(1000000));
     store.dispatch(createBoughtAnItemAction("A Modest Boat", 45000));
     store.dispatch(createBoughtAnItemAction("A Modest Yacht", 450000));
